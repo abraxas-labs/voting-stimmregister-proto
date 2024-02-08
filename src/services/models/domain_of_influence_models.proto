@@ -1,0 +1,53 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.models;
+
+import "services/models/canton_models.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Models";
+
+// The domain of influence types.
+enum DomainOfInfluenceType {
+  DOMAIN_OF_INFLUENCE_TYPE_UNSPECIFIED = 0;
+  // Switzerland (Schweiz / Bund)
+  DOMAIN_OF_INFLUENCE_TYPE_CH = 1;
+  // Canton (Kanton)
+  DOMAIN_OF_INFLUENCE_TYPE_CT = 2;
+  // District (Bezirk)
+  DOMAIN_OF_INFLUENCE_TYPE_BZ = 3;
+  // Municipality (Gemeinde)
+  DOMAIN_OF_INFLUENCE_TYPE_MU = 4;
+  // City district (Stadtkreis)
+  DOMAIN_OF_INFLUENCE_TYPE_SK = 5;
+  // School circle (Schulkreis)
+  DOMAIN_OF_INFLUENCE_TYPE_SC = 6;
+  // Church circle (Kirchgemeinde)
+  DOMAIN_OF_INFLUENCE_TYPE_KI = 7;
+  // Local community (Ortsbürgergemeinde)
+  DOMAIN_OF_INFLUENCE_TYPE_OG = 8;
+  // Coorporation (Koorporation)
+  DOMAIN_OF_INFLUENCE_TYPE_KO = 9;
+  // Other types (Andere)
+  DOMAIN_OF_INFLUENCE_TYPE_AN = 10;
+  // catholic church circle (Kirchgemeinde katholisch)
+  DOMAIN_OF_INFLUENCE_TYPE_KI_KAT = 11;
+  // evangelic church circle (Kirchgemeinde evangelisch)
+  DOMAIN_OF_INFLUENCE_TYPE_KI_EVA = 12;
+  // Verkehrskreis
+  DOMAIN_OF_INFLUENCE_TYPE_AN_VEK = 13;
+  // Wohnviertel
+  DOMAIN_OF_INFLUENCE_TYPE_AN_WOK = 14;
+  // Volkskreis
+  DOMAIN_OF_INFLUENCE_TYPE_AN_VOK = 15;
+}
+
+// The domain of influence model.
+message DomainOfInfluenceModel {
+  string name = 1;
+  string identifier = 2;
+  Canton canton = 3;
+  DomainOfInfluenceType domain_of_influence_type = 4;
+}

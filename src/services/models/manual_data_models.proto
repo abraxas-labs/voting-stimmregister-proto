@@ -1,0 +1,37 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.models;
+
+import "services/models/history_models.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Models";
+
+// The manual data model.
+message ManualDataModel {
+  // The id.
+  int32 id = 1;
+
+  // The source.
+  string source = 2;
+
+  // The name.
+  string name = 3;
+
+  // The upload date.
+  string upload_date = 4;
+
+  // The person how uploaded.
+  string uploaded_due_to = 5;
+
+  // The number of persons in the upload.
+  int32 people = 6;
+
+  // The state
+  bool state = 7;
+
+  // The histories
+  repeated services.models.HistoryModel histories = 8;
+}

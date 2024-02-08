@@ -1,0 +1,106 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.models;
+
+import "google/protobuf/timestamp.proto";
+import "services/models/audit_info_models.proto";
+import "services/models/import_source_system_models.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Models";
+
+// The import type enumeration.
+enum ImportType{
+  IMPORT_TYPE_UNSPECIFIED = 0;
+  IMPORT_TYPE_DOMAIN_OF_INFLUENCE = 1;
+  IMPORT_TYPE_PERSON = 2;
+  IMPORT_TYPE_ACL = 3;
+}
+
+// The import status enumeration.
+enum ImportStatus{
+  IMPORT_STATUS_UNSPECIFIED = 0;
+  IMPORT_STATUS_QUEUED = 1;
+  IMPORT_STATUS_RUNNING = 2;
+  IMPORT_STATUS_ABORTED = 3;
+  IMPORT_STATUS_FINISHEDWITHERRORS = 4;
+  IMPORT_STATUS_FINISHEDSUCCESSFULLY = 5;
+  IMPORT_STATUS_STALE = 6;
+  IMPORT_STATUS_FAILED = 7;
+}
+
+// The import status enumeration.
+enum ImportStatusSimple{
+  IMPORT_STATUS_SIMPLE_UNSPECIFIED = 0;
+  IMPORT_STATUS_SIMPLE_ALL = 1;
+  IMPORT_STATUS_SIMPLE_FAILED = 2;
+  IMPORT_STATUS_SIMPLE_SUCCESS = 3;
+}
+
+// The import source enumeration.
+enum ImportSource{
+  IMPORT_SOURCE_UNSPECIFIED = 0;
+  IMPORT_SOURCE_ALL = 1;
+  IMPORT_SOURCE_AUTOMATED = 2;
+  IMPORT_SOURCE_MANUAL = 3;
+}
+
+// The import statistic model.
+message ImportStatisticModel {
+  // The unique identifier.
+  string id = 1;
+  // The source system.
+  ImportSourceSystem source_system = 2;
+  // The total import records count.
+  int32 import_records_count_total = 3;
+  // The created datasets count.
+  int32 datasets_count_created = 4;
+  // The updated datasets count.
+  int32 datasets_count_updated = 5;
+  // The deleted datasets count.
+  int32 datasets_count_deleted = 6;
+  // The audit info of this entity.
+  services.models.AuditInfoModel audit_info = 7;
+  // The finished date time.
+  google.protobuf.Timestamp finished_date = 8;
+  // The total elapsed ms.
+  string total_elapsed_milliseconds = 9;
+  // The municipality id.
+  int32 municipality_id = 10;
+  // the municipality name.
+  string municipality_name = 11;
+  // The processing errors text.
+  string processing_errors = 12;
+  // Whether the import has validaiton erorrs or not.
+  bool has_validation_errors = 13;
+  // The list of entities with validation errors.
+  repeated string entities_with_validation_errors = 14;
+  // The list of record numbers with validation errors.
+  repeated int32 record_numbers_with_validation_errors = 15;
+  // The record validation errors.
+  repeated RecordValidationErrorModel record_validation_errors = 16;
+  // The import status enum.
+  ImportStatus import_status = 17;
+  // The import type enum.
+  ImportType import_type = 18;
+}
+
+// The record validation error model.
+message RecordValidationErrorModel {
+  // The number of the record containing the error.
+  int32 record_number = 1;
+  // The list of fields with errors.
+  repeated FieldValidationErrorModel fields = 2;
+  // The identifier string of the record.
+  string record_identifier = 3;
+}
+
+// The field validation error model
+message FieldValidationErrorModel {
+  // The field name which contains errors.
+  string field_name = 1;
+  // The error messages.
+  repeated string errors = 2;
+}

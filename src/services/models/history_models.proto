@@ -1,0 +1,29 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.models;
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Models";
+
+// The data history model.
+message HistoryModel {
+  // The id.
+  int32 id = 1;
+
+  // The latest update.
+  string latest_update = 2;
+
+  // The duration
+  string duration = 3;
+
+  // The size of persons.
+  int32 persons = 4;
+
+  // The state
+  bool state = 5;
+
+  // The error string
+  string error = 6;
+}

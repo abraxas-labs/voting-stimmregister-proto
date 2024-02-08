@@ -1,0 +1,31 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.models;
+
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Models";
+
+// The automatic data model.
+message AuditInfoModel {
+  // the loginid of the creator of the entity.
+  string created_by_id = 1;
+
+  // the username of the creator of the entity.
+  string created_by_name = 2;
+
+  // the timestamp when this entity was created.
+  google.protobuf.Timestamp created_at = 3;
+
+  // the loginid of the user who last modified the entity.
+  string modified_by_id = 4;
+
+  // the username of the user who last modified the entity.
+  string modified_by_name = 5;
+
+  // the timestamp when the latest modification on this entity happened.
+  google.protobuf.Timestamp modified_at = 6;
+}

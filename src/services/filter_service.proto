@@ -1,0 +1,46 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services;
+
+import "google/protobuf/empty.proto";
+import "services/requests/filter_requests.proto";
+import "services/responses/filter_responses.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services";
+
+// Service for filter of people.
+service FilterService {
+  // Gets the filter for user.
+  rpc GetAll(services.requests.FilterServiceGetAllRequest)
+    returns (services.responses.FilterServiceGetAllResponse);
+  // Gets a single filter
+  rpc GetSingle(services.requests.FilterServiceGetSingleRequest)
+    returns (services.responses.FilterServiceGetSingleResponse);
+  // Gets a single filter
+  rpc GetMetadata(services.requests.FilterServicePreviewMetadataRequest)
+    returns (services.responses.FilterServicePreviewMetadataResponse);
+  // Gets a single filter and a single version by a version id
+  rpc GetSingleVersion(services.requests.FilterServiceGetSingleVersionRequest)
+    returns (services.responses.FilterServiceGetSingleFilterVersionResponse);
+  // Saves filter
+  rpc Save(services.requests.FilterServiceSaveFilterRequest)
+    returns (services.responses.FilterServiceSaveFilterResponse);
+  // Delete filter
+  rpc Delete(services.requests.FilterServiceDeleteFilterRequest)
+    returns (google.protobuf.Empty);
+  // Duplicate filter
+  rpc Duplicate(services.requests.FilterServiceDuplicateFilterRequest)
+    returns (services.responses.FilterServiceDuplicateFilterResponse);
+  // Creates filter version
+  rpc CreateVersion(services.requests.FilterServiceCreateFilterVersionRequest)
+    returns (services.responses.FilterServiceCreateVersionResponse);
+  // Rename filter version
+  rpc RenameVersion(services.requests.FilterServiceRenameFilterVersionRequest)
+    returns (google.protobuf.Empty);
+  // Deletes filter version
+  rpc DeleteVersion(services.requests.FilterServiceDeleteFilterVersionRequest)
+    returns (google.protobuf.Empty);
+}

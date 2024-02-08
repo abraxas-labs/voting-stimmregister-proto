@@ -1,0 +1,60 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.requests;
+
+import "rules/rules.proto";
+import "services/models/filter_criteria_models.proto";
+import "services/models/paging_models.proto";
+import "services/models/person_models.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Requests";
+
+// Get the last used parameters
+message PersonServiceGetLastUsedParametersRequest {
+  // the search type
+  services.models.PersonSearchType search_type = 1
+    [(validation.v1.rules).enum = { exact_enum: true, allow_unspecified: false }];
+}
+
+// Get all persons request.
+message PersonServiceGetAllRequest {
+  // The paging options.
+  services.models.PagingModel paging = 1;
+
+  // The filter criteria list.
+  repeated services.models.FilterCriteriaModel criteria = 2;
+
+  // The search type intention
+  services.models.PersonSearchType search_type = 3
+    [(validation.v1.rules).enum = { exact_enum: true, allow_unspecified: false }];
+}
+
+// Get all persons by filter & version id
+message PersonServiceGetByFilterIdRequest {
+  // The paging options.
+  services.models.PagingModel paging = 1;
+
+  // the filter id
+  string filter_id = 2 [(validation.v1.rules).string.guid = true];
+
+  // the filter version id (optional)
+  optional string version_id = 3 [(validation.v1.rules).string.guid = true];
+}
+
+// Get all persons by filter version id
+message PersonServiceGetByFilterVersionIdRequest {
+  // The paging options.
+  services.models.PagingModel paging = 1;
+
+  // the filter version id
+  string version_id = 2 [(validation.v1.rules).string.guid = true];
+}
+
+// Get all persons request.
+message PersonServiceGetSingleRequest {
+  // The person's register id.
+  string register_id = 1 [(validation.v1.rules).string.guid = true];
+}

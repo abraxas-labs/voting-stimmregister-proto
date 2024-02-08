@@ -1,0 +1,32 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.models;
+
+import "services/models/filter_criteria_models.proto";
+import "services/models/filter_version_models.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Models";
+
+// The filter model.
+message FilterDefinitionModel {
+  // The id of the filter.
+  string id = 1;
+
+  // The name of the filter.
+  string name = 2;
+
+  // The description of the filter.
+  string description = 3;
+
+  // The count of persons of the latest version of the filter or 0 if no version is available.
+  services.models.FilterVersionModel latest_version = 4;
+
+  // The criterias of the filter.
+  repeated services.models.FilterCriteriaModel criteria = 5;
+
+  // The versions of the filter.
+  repeated services.models.FilterVersionModel versions = 6;
+}

@@ -1,0 +1,54 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.responses;
+
+import "services/models/filter_definition_models.proto";
+import "services/models/filter_version_models.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Responses";
+
+// Get filter response.
+message FilterServiceGetAllResponse {
+  // The filters returned.
+  repeated services.models.FilterDefinitionModel filters = 1;
+}
+
+// Get single filter response.
+message FilterServiceGetSingleResponse {
+  // The filters returned.
+  services.models.FilterDefinitionModel filter = 1;
+}
+
+// Preview metadata response.
+message FilterServicePreviewMetadataResponse {
+  // The total count of persons
+  int32 count_of_persons = 1;
+
+  // The count of people with IsValid = false
+  int32 count_of_invalid_persons = 2;
+}
+
+// Get single filter version response.
+message FilterServiceGetSingleFilterVersionResponse {
+  // The filter returned.
+  services.models.FilterDefinitionModel filter = 1;
+  services.models.FilterVersionModel filter_version = 2;
+}
+
+// Save filter response
+message FilterServiceSaveFilterResponse {
+  string id = 1;
+}
+
+// Duplicate filter response
+message FilterServiceDuplicateFilterResponse {
+  string id = 1;
+}
+
+// Create filter version response
+message FilterServiceCreateVersionResponse {
+  string id = 1;
+}

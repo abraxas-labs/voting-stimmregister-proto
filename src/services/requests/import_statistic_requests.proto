@@ -1,0 +1,60 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.requests;
+
+import "rules/rules.proto";
+import "services/models/import_source_system_models.proto";
+import "services/models/import_statistic_models.proto";
+import "services/models/paging_models.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Requests";
+
+// List import statistics service request.
+message ListImportStatisticsRequest {
+  // The paging options.
+  services.models.PagingModel paging = 1;
+  /*
+    validations: exact-enum
+    description: The import type, i.e. 'PERSON'.
+  */
+  services.models.ImportType import_type = 2 [(validation.v1.rules).enum.exact_enum = true];
+  /*
+    validations: exact-enum
+    description: The simlified import status for filtering, i.e. 'FAILED'.
+  */
+  services.models.ImportStatusSimple import_status_simple = 3 [(validation.v1.rules).enum.exact_enum = true];
+  /*
+    validations: exact-enum
+    description: The import source, i.e 'MANUAL'.
+  */
+  services.models.ImportSource import_source = 4 [(validation.v1.rules).enum.exact_enum = true];
+  /*
+    validations: exact-enum
+    description: The import type, i.e. 'LOGANTO'.
+  */
+  services.models.ImportSourceSystem import_source_system = 5 [(validation.v1.rules).enum.exact_enum = true];
+}
+
+// List import statistics service request.
+message GetImportStatisticHistoryRequest {
+  // The paging options.
+  services.models.PagingModel paging = 1;
+  /*
+    validations: exact-enum
+    description: The import type, i.e. 'PERSON'.
+  */
+  services.models.ImportType import_type = 2 [(validation.v1.rules).enum.exact_enum = true];
+  /*
+    validations: typeof(int32),min-value(0),max-value(10000)
+    description: The corresponding municipality id, i.e. '3124'.
+  */
+  int32 municipality_id = 3 [(validation.v1.rules).integer = { min_value: 0, max_value: 10000}];
+  /*
+    validations: exact-enum
+    description: The import type, i.e. 'LOGANTO'.
+  */
+  services.models.ImportSourceSystem import_source_system = 4 [(validation.v1.rules).enum.exact_enum = true];
+}

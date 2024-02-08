@@ -1,0 +1,22 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.models;
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Models";
+
+// File info import model required for uploading files.
+message ImportFileInfo{
+  string file_name = 1;
+  string file_extension = 2;
+}
+
+// Bytes content model required for uploading files.
+message ImportBytesContent{
+  int64 file_size = 1;
+  bytes buffer = 2;
+  int32 readed_byte = 3;
+  ImportFileInfo info = 4;
+}

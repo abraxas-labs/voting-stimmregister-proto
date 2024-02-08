@@ -1,0 +1,22 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services;
+
+import "services/requests/data_request.proto";
+import "services/responses/data_responses.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services";
+
+// Service for data of imports.
+service DataService {
+  // Gets the data for manual imports.
+  rpc GetAllManual(services.requests.DataServiceGetAllManualRequest)
+    returns (services.responses.DataServiceGetAllManualResponse);
+
+  // Gets the data for automatic imports.
+  rpc GetAllAutomatic(services.requests.DataServiceGetAllAutomaticRequest)
+    returns (services.responses.DataServiceGetAllAutomaticResponse);
+}

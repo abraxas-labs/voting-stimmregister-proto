@@ -1,0 +1,15 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.models;
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Models";
+
+// The validation result model.
+message ValidationResultModel {
+
+  // the validation messages.
+  repeated string messages = 1;
+}

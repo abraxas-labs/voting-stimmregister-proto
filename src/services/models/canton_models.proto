@@ -1,0 +1,40 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.models;
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Models";
+
+// The cantons.
+enum Canton {
+  UNSPECIFIED = 0;
+  CANTON_SG = 1;
+  CANTON_TG = 2;
+  CANTON_ZH = 3;
+  CANTON_BE = 4;
+  CANTON_LU = 5;
+  CANTON_UR = 6;
+  CANTON_SZ = 7;
+  CANTON_OW = 8;
+  CANTON_NW = 9;
+  CANTON_GL = 10;
+  CANTON_ZG = 11;
+  CANTON_FR = 12;
+  CANTON_SO = 13;
+  CANTON_BS = 14;
+  CANTON_BL = 15;
+  CANTON_SH = 16;
+  CANTON_AR = 17;
+  CANTON_AI = 18;
+  CANTON_GR = 19;
+  CANTON_AG = 20;
+  CANTON_TI = 21;
+  CANTON_VD = 22;
+  CANTON_VS = 23;
+  CANTON_NE = 24;
+  CANTON_GE = 25;
+  CANTON_JU = 26;
+  CANTON_FL = 27;
+}

@@ -1,0 +1,28 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.responses;
+
+import "services/models/import_statistic_models.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Responses";
+
+// List import statistics response.
+message ListImportStatisticsResponse {
+  // The resolved import statistics list.
+  repeated services.models.ImportStatisticModel import_statistics = 1;
+
+  // The total search hits count.
+  int32 total_count = 2;
+}
+
+// Get the import statistic history response for a specific import statistic.
+message GetImportStatisticHistoryResponse {
+  // The import statistic history list.
+  repeated services.models.ImportStatisticModel import_statistics = 1;
+
+  // The total search hits count.
+  int32 total_count = 2;
+}

@@ -1,0 +1,50 @@
+{
+  "name": "@abraxas/voting-stimmregister-proto",
+  "version": "0.0.0-development",
+  "description": "Abraxas Dokumente project containing protobuf code for Voting.Stimmregister",
+  "keywords": [
+    "protobuf",
+    "Abraxas",
+    "Voting",
+    "proto"
+  ],
+  "author": "Abraxas Informatik AG",
+  "scripts": {
+    "build": "run-s build:proto build:public-api build:lib",
+    "build:local": "run-s build:proto-local-docker build:public-api build:lib",
+    "build:lib": "ng-packagr",
+    "build:proto": "./build-proto.sh",
+    "build:proto-local-docker": "./build-proto-local-docker.sh",
+    "build:public-api": "./build-public-api.sh"
+  },
+  "peerDependencies": {
+    "@angular/common": "^14.3.0",
+    "@angular/core": "^14.3.0",
+    "@ngx-grpc/common": "3.0.1",
+    "@ngx-grpc/core": "3.0.1",
+    "@ngx-grpc/grpc-web-client": "3.0.1",
+    "@ngx-grpc/well-known-types": "3.0.1",
+    "google-protobuf": "^3.20.1",
+    "rxjs": "^7.5.6"
+  },
+  "devDependencies": {
+    "@angular/common": "14.3.0",
+    "@angular/compiler": "14.3.0",
+    "@angular/compiler-cli": "14.3.0",
+    "@angular/core": "14.3.0",
+    "@ngx-grpc/common": "3.0.1",
+    "@ngx-grpc/core": "3.0.1",
+    "@ngx-grpc/grpc-web-client": "3.0.1",
+    "@ngx-grpc/protoc-gen-ng": "3.0.1",
+    "@ngx-grpc/well-known-types": "3.0.1",
+    "@types/google-protobuf": "^3.15.6",
+    "google-protobuf": "^3.20.1",
+    "grpc-web": "^1.3.1",
+    "ng-packagr": "14.2.2",
+    "npm-run-all": "4.1.5",
+    "rxjs": "7.5.6",
+    "tslib": "2.4.0",
+    "typescript": "4.8.4",
+    "zone.js": "0.11.7"
+  }
+}

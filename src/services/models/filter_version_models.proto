@@ -1,0 +1,36 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.models;
+
+import "google/protobuf/timestamp.proto";
+import "services/models/audit_info_models.proto";
+import "services/models/filter_criteria_models.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Models";
+
+// The filter version model (snapshot).
+message FilterVersionModel {
+  // The id.
+  string id = 1;
+
+  // The name.
+  string name = 2;
+
+  // the audit info of this version.
+  services.models.AuditInfoModel audit_info = 3;
+
+  // The deadline date.
+  google.protobuf.Timestamp deadline = 4;
+
+  // The count of people.
+  int32 count = 5;
+
+  // The count of people with IsValid = false
+  int32 count_of_invalid_persons = 6;
+
+  // The criterias of the filter.
+  repeated services.models.FilterCriteriaModel criteria = 7;
+}

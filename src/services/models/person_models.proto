@@ -1,0 +1,235 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.models;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "services/models/import_source_system_models.proto";
+import "services/models/validation_result_model.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Models";
+
+// The person model.
+message PersonModel {
+  // The id.
+  string id = 1;
+
+  // The AHV number.
+  int64 vn = 2;
+
+  // The id of domain of influence.
+  string domain_of_influence_id = 3;
+
+  // The id of source system.
+  string source_system_id = 4;
+
+  // The official name.
+  string official_name = 5;
+
+  // The first name.
+  string first_name = 6;
+
+  // The sex.
+  int32 sex = 7;
+
+  // The date of birth.
+  google.protobuf.Timestamp date_of_birth = 8;
+
+  // The bool of adjusted date of brith.
+  bool date_of_birth_adjusted = 9;
+
+  // The original name.
+  string original_name = 10;
+
+  // The alliance name.
+  string alliance_name = 11;
+
+  // The alias name.
+  string alias_name = 12;
+
+  // The other name.
+  string other_name = 13;
+
+  // The call name.
+  string call_name = 14;
+
+  // The language of correspondence.
+  string language_of_correspondence = 15;
+
+  // The religion.
+  string religion = 16;
+
+  // The restricted voting and election right of federation.
+  bool restricted_voting_and_election_right_federation = 17;
+
+  // The country.
+  string country = 18;
+
+  // The evoting flag.
+  bool e_voting = 19;
+
+  // The muncipality name.
+  string municipality_name = 20;
+
+  // The municipality id.
+  int32 municipality_id = 21;
+
+  // The type of residence.
+  string type_of_residence = 22;
+
+  // The permit of residence.
+  string residence_permit = 25;
+
+  // The valid date from the permit of residence.
+  google.protobuf.Timestamp residence_permit_valid_from = 26;
+
+  // The valid date til of the permit of residence.
+  google.protobuf.Timestamp residence_permit_valid_till = 27;
+
+  // The date of entry.
+  google.protobuf.Timestamp residence_entry_date = 28;
+
+  // The extension line 1 of contact address.
+  string contact_address_extension_line_1 = 29;
+
+  // The extension line 2 of contact address.
+  string contact_address_extension_line_2 = 30;
+
+  // The street of contact address
+  string contact_address_street = 31;
+
+  // The house number including addition of contact address.
+  string contact_address_house_number = 32;
+
+  // The post office box text of contact address.
+  string contact_address_post_office_box_text = 34;
+
+  // The contact address line 1.
+  string contact_address_line_1 = 35;
+
+  // The contact address line 2.
+  string contact_address_line_2 = 36;
+
+  // The contact address line 3.
+  string contact_address_line_3 = 37;
+
+  // The contact address line 4.
+  string contact_address_line_4 = 38;
+
+  // The contact address line 5.
+  string contact_address_line_5 = 39;
+
+  // The contact address line 6.
+  string contact_address_line_6 = 40;
+
+  // The contact address line 7.
+  string contact_address_line_7 = 41;
+
+  // The town of contact address.
+  string contact_address_town = 42;
+
+  // The locality of contact address.
+  string contact_address_locality = 43;
+
+  // The zip code of contact address.
+  string contact_address_zip_code = 44;
+
+  // The extension line 1 of residence address.
+  string residence_address_extension_line_1 = 45;
+
+  // The extension line 2 of residence address.
+  string residence_address_extension_line_2 = 46;
+
+  // The street of residence address.
+  string residence_address_street = 47;
+
+  // The hous number of residence address.
+  string residence_address_house_number = 48;
+
+  // The post office box text of residence address.
+  string residence_address_post_office_box_text = 49;
+
+  // The town of residence address.
+  string residence_address_town = 50;
+
+  // The country of residence.
+  string residence_country = 51;
+
+  // The zip code of residence address.
+  string residence_address_zip_code = 52;
+
+  // The date of move in arrival date.
+  google.protobuf.Timestamp move_in_arrival_date = 53;
+
+  // The municipality name of move in.
+  string move_in_municipality_name = 54;
+
+  // The canton abbreviation of move in.
+  string move_in_canton_abbreviation = 55;
+
+  // The comes from of move in.
+  string move_in_comes_from = 56;
+
+  // The short country name of move in.
+  string move_in_country_name_short = 57;
+
+  // The bool of unkown move in.
+  bool move_in_unknown = 58;
+
+  // The calculated is voting allowed.
+  bool is_voting_allowed = 73;
+
+  // The calculated actuality.
+  bool actuality = 74;
+
+  // The date of latest actuality.
+  google.protobuf.Timestamp actuality_date = 75;
+
+  // The flag if validation errors occurred.
+  bool has_validation_errors = 76;
+
+  // The validation errors that occurred during the import process.
+  map<string, ValidationResultModel> validation_errors = 77;
+
+  // The indicator of whether the date of birth is valid for the right to vote, e.g. older than 18 years.
+  bool is_birth_date_valid_for_voting_rights = 78;
+
+  // The residence canton abbreviation.
+  string residence_canton_abbreviation = 79;
+
+  // The short country name.
+  string country_name_short = 81;
+
+  // The register id of the person
+  string register_id = 82;
+
+  // The indicator of whether the person's nationality is valid for the right to vote.
+  bool is_nationality_valid_for_voting_rights = 83;
+
+  // whether the person is a swiss, living abroad
+  bool is_swiss_abroad = 84;
+
+  // Gets or sets a value indicating whether the voting documents are sent to the address of the voter (false)
+  // or to the domain of influence documents return address (eg. the municipality administration, true).
+  // This is usually true for people without a permanent domicile.
+  // In german usually called 'nicht Zustellen' (do not deliver to the citizen).
+  bool send_voting_cards_to_domain_of_influence_return_address = 85;
+
+  // The name of source system.
+  ImportSourceSystem source_system_name = 86;
+
+  // The post office box number of contact address.
+  google.protobuf.Int32Value contact_address_post_office_box_number = 87;
+}
+
+// Person search type.
+enum PersonSearchType {
+  PERSON_SEARCH_TYPE_UNSPECIFIED = 0;
+  // looking up persons directly
+  PERSON_SEARCH_TYPE_PERSON = 1;
+  // looking up persons with the intention to create a filter
+  PERSON_SEARCH_TYPE_FILTER = 2;
+}

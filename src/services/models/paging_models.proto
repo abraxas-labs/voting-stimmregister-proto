@@ -1,0 +1,25 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.models;
+
+import "rules/rules.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Models";
+
+// Paging model.
+message PagingModel {
+  /*
+    validations: typeof(int32),min-value(0),max-value(100000)
+    description: The page index, i.e. '0'.
+  */
+  int32 page_index = 1 [(validation.v1.rules).integer = { min_value: 0, max_value: 100000}];
+
+  /*
+    validations: typeof(int32),min-value(1),max-value(100)
+    description: The page size which defines how many items should be fetched, i.e. '10'.
+  */
+  int32 page_size = 2 [(validation.v1.rules).integer = { min_value: 1, max_value: 100}];
+}

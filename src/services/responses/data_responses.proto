@@ -1,0 +1,23 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.responses;
+
+import "services/models/automatic_data_models.proto";
+import "services/models/manual_data_models.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Responses";
+
+// Get data response for manual imports.
+message DataServiceGetAllManualResponse {
+  // The data returned from manual imports.
+  repeated services.models.ManualDataModel data = 1;
+}
+
+// Get data response for loganto imports.
+message DataServiceGetAllAutomaticResponse {
+  // The data returned from loganto imports.
+  repeated services.models.AutomaticDataModel data = 1;
+}

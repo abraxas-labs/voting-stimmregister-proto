@@ -1,0 +1,17 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.models;
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Models";
+
+// The source system of the imported data.
+enum ImportSourceSystem{
+  IMPORT_SOURCE_SYSTEM_UNSPECIFIED = 0;
+  IMPORT_SOURCE_SYSTEM_LOGANTO = 1;
+  IMPORT_SOURCE_SYSTEM_COBRA = 2;
+  IMPORT_SOURCE_SYSTEM_VOTING_BASIS = 3;
+  IMPORT_SOURCE_SYSTEM_INNOSOLV = 4;
+}

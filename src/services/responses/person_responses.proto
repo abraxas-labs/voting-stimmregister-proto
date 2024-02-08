@@ -1,0 +1,46 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.responses;
+
+import "services/models/domain_of_influence_models.proto";
+import "services/models/filter_criteria_models.proto";
+import "services/models/paging_models.proto";
+import "services/models/person_models.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Responses";
+
+// Get last used parameters response
+message PersonServiceGetLastUsedParametersResponse {
+  // the search type
+  services.models.PersonSearchType search_type = 1;
+
+  // the last used criteria
+  repeated services.models.FilterCriteriaModel criteria = 2;
+
+  // The paging information
+  services.models.PagingModel page_info = 3;
+}
+
+// Get people response.
+message PersonServiceGetAllResponse {
+  // The persons returned from search.
+  repeated services.models.PersonModel people = 1;
+
+  // The total search hits count.
+  int32 total_count = 2;
+
+  // The count of persons with IsValid = false in this search result set
+  // (over all pages)
+  int32 invalid_persons_count = 3;
+}
+
+// Get single person response.
+message PersonServiceGetSingleResponse {
+  // The person result model
+  services.models.PersonModel latest = 1;
+  // The domain of influences of the latest person model.
+  repeated services.models.DomainOfInfluenceModel latest_domain_of_influences = 2;
+}

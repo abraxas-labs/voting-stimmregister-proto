@@ -1,0 +1,72 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.requests;
+
+import "google/protobuf/timestamp.proto";
+import "rules/rules.proto";
+import "services/models/filter_criteria_models.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Requests";
+
+// Get all filter request
+message FilterServiceGetAllRequest {
+}
+
+// Get single filter request.
+message FilterServiceGetSingleRequest {
+  string filter_id = 1 [(validation.v1.rules).string.guid = true];
+}
+
+// Previews the metadata of the filter at a given deadline.
+message FilterServicePreviewMetadataRequest {
+  string filter_id = 1 [(validation.v1.rules).string.guid = true];
+  google.protobuf.Timestamp deadline = 2;
+}
+
+// Get single filter version request.
+message FilterServiceGetSingleVersionRequest {
+  string filter_version_id = 1 [(validation.v1.rules).string.guid = true];
+}
+
+// Save filter request
+message FilterServiceSaveFilterRequest {
+  optional string filter_id = 1 [(validation.v1.rules).string.guid = true];
+  string name = 2 [(validation.v1.rules).string = { min_length: 2, max_length : 100, simple_sl_text: true}];
+  string description = 3 [(validation.v1.rules).string = { min_length: 2, max_length : 200, complex_sl_text: true}];
+  // The filter criteria list.
+  repeated services.models.FilterCriteriaModel criteria = 4;
+}
+
+// Create version request
+message FilterServiceCreateFilterVersionRequest {
+  string filter_id = 1 [(validation.v1.rules).string.guid = true];
+  string name = 2 [(validation.v1.rules).string = { min_length: 2, max_length : 100, simple_sl_text: true}];
+  google.protobuf.Timestamp deadline = 3;
+}
+
+/*
+  Rename version request
+  validations: min-value(2), max-value(100), simple_sl_text
+*/
+message FilterServiceRenameFilterVersionRequest {
+  string filter_version_id = 1 [(validation.v1.rules).string.guid = true];
+  string name = 2 [(validation.v1.rules).string = { min_length: 2, max_length: 100, simple_sl_text: true}];
+}
+
+// Delete version request
+message FilterServiceDeleteFilterVersionRequest {
+  string filter_version_id = 1 [(validation.v1.rules).string.guid = true];
+}
+
+// Delete filter request
+message FilterServiceDeleteFilterRequest {
+  string filter_id = 1 [(validation.v1.rules).string.guid = true];
+}
+
+// Duplicate filter request
+message FilterServiceDuplicateFilterRequest {
+  string filter_id = 1 [(validation.v1.rules).string.guid = true];
+}

@@ -1,0 +1,29 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services;
+
+import "services/requests/person_requests.proto";
+import "services/responses/person_responses.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services";
+
+// Service for person data search.
+service PersonService {
+  rpc GetLastUsedParameters(services.requests.PersonServiceGetLastUsedParametersRequest)
+    returns (services.responses.PersonServiceGetLastUsedParametersResponse);
+  // Gets the person data search results.
+  rpc GetAll(services.requests.PersonServiceGetAllRequest)
+    returns (services.responses.PersonServiceGetAllResponse);
+  // Gets a single person
+  rpc GetSingle(services.requests.PersonServiceGetSingleRequest)
+    returns (services.responses.PersonServiceGetSingleResponse);
+  // Gets the person data by filter id
+  rpc GetByFilterId(services.requests.PersonServiceGetByFilterIdRequest)
+    returns (services.responses.PersonServiceGetAllResponse);
+  // Gets the person data by filter version id
+  rpc GetByFilterVersionId(services.requests.PersonServiceGetByFilterVersionIdRequest)
+    returns (services.responses.PersonServiceGetAllResponse);
+}
