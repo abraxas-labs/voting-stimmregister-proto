@@ -1,0 +1,13 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.requests;
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Requests";
+
+// List registration statistics service request.
+message ListRegistrationStatisticRequest {
+
+}

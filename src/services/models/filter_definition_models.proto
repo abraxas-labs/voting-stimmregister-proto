@@ -29,4 +29,10 @@ message FilterDefinitionModel {
 
   // The versions of the filter.
   repeated services.models.FilterVersionModel versions = 6;
+
+  // The name of the tenant which created the filter.
+  string tenant_name = 7;
+
+  // The id of the tenant which created the filter.
+  string tenant_id = 8;
 }

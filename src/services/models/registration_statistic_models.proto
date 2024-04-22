@@ -1,0 +1,22 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.models;
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Models";
+
+// The registration statistic model.
+message RegistrationStatisticModel {
+  // The amount of e-voter registrations.
+  int32 evoter_registration_count = 1;
+  // The amount of e-voter deregistrations.
+  int32 evoter_deregistration_count = 2;
+  // The total amount of e-voters.
+  int32 evoter_total_count = 3;
+  // The total amount of voters.
+  int32 voter_total_count = 4;
+  // The audit info of this entity.
+  float evoter_share = 5;
+}

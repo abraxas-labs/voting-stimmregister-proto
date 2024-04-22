@@ -1,0 +1,21 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.responses;
+
+import "services/models/municipality_registration_statistic_models.proto";
+import "services/models/registration_statistic_models.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Responses";
+
+// List registration statistics response.
+message ListRegistrationStatisticResponse {
+  // The resolved municipality registration statistic list.
+  repeated services.models.MunicipalityRegistrationStatisticModel municipality_registration_statistics = 1;
+  // The resolved total registration statistic.
+  services.models.RegistrationStatisticModel total_registration_statistic = 2;
+  // The top level authority flag.
+  bool is_top_level_authority = 3;
+}

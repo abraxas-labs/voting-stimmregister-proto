@@ -34,7 +34,7 @@ message FilterServiceGetSingleVersionRequest {
 // Save filter request
 message FilterServiceSaveFilterRequest {
   optional string filter_id = 1 [(validation.v1.rules).string.guid = true];
-  string name = 2 [(validation.v1.rules).string = { min_length: 2, max_length : 100, simple_sl_text: true}];
+  string name = 2 [(validation.v1.rules).string = { min_length: 2, max_length : 100, complex_sl_text: true}];
   string description = 3 [(validation.v1.rules).string = { min_length: 2, max_length : 200, complex_sl_text: true}];
   // The filter criteria list.
   repeated services.models.FilterCriteriaModel criteria = 4;
@@ -43,7 +43,7 @@ message FilterServiceSaveFilterRequest {
 // Create version request
 message FilterServiceCreateFilterVersionRequest {
   string filter_id = 1 [(validation.v1.rules).string.guid = true];
-  string name = 2 [(validation.v1.rules).string = { min_length: 2, max_length : 100, simple_sl_text: true}];
+  string name = 2 [(validation.v1.rules).string = { min_length: 2, max_length : 100, complex_sl_text: true}];
   google.protobuf.Timestamp deadline = 3;
 }
 
@@ -53,7 +53,7 @@ message FilterServiceCreateFilterVersionRequest {
 */
 message FilterServiceRenameFilterVersionRequest {
   string filter_version_id = 1 [(validation.v1.rules).string.guid = true];
-  string name = 2 [(validation.v1.rules).string = { min_length: 2, max_length: 100, simple_sl_text: true}];
+  string name = 2 [(validation.v1.rules).string = { min_length: 2, max_length: 100, complex_sl_text: true}];
 }
 
 // Delete version request

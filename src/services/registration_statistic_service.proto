@@ -1,0 +1,18 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services;
+
+import "services/requests/registration_statistic_requests.proto";
+import "services/responses/registration_statistic_responses.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services";
+
+// Service for registration statistics.
+service RegistrationStatisticService {
+  // Lists the registration statistics.
+  rpc List(services.requests.ListRegistrationStatisticRequest)
+    returns (services.responses.ListRegistrationStatisticResponse);
+}

@@ -1,0 +1,20 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.models;
+
+import "services/models/registration_statistic_models.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Models";
+
+// The municipality registration statistic model.
+message MunicipalityRegistrationStatisticModel {
+  // The municipality id.
+  int32 municipality_id = 1;
+  // the municipality name.
+  string municipality_name = 2;
+  // the registration statistic
+  RegistrationStatisticModel registration_statistic = 3;
+}

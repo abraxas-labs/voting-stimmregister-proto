@@ -24,8 +24,6 @@ enum DomainOfInfluenceType {
   DOMAIN_OF_INFLUENCE_TYPE_SK = 5;
   // School circle (Schulkreis)
   DOMAIN_OF_INFLUENCE_TYPE_SC = 6;
-  // Church circle (Kirchgemeinde)
-  DOMAIN_OF_INFLUENCE_TYPE_KI = 7;
   // Local community (Ortsbürgergemeinde)
   DOMAIN_OF_INFLUENCE_TYPE_OG = 8;
   // Coorporation (Koorporation)
