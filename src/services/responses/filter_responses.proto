@@ -5,6 +5,7 @@ syntax = "proto3";
 
 package abraxas.voting.stimmregister.v1.services.responses;
 
+import "google/protobuf/timestamp.proto";
 import "services/models/filter_definition_models.proto";
 import "services/models/filter_version_models.proto";
 
@@ -27,8 +28,14 @@ message FilterServicePreviewMetadataResponse {
   // The total count of persons
   int32 count_of_persons = 1;
 
-  // The count of people with IsValid = false
+  // The count of persons with IsValid = false
   int32 count_of_invalid_persons = 2;
+
+  // Indicates whether the person's actuality is given or not.
+  bool is_actual = 3;
+
+  // The actuality date of the oldest person's data import.
+  google.protobuf.Timestamp actuality_date = 4;
 }
 
 // Get single filter version response.

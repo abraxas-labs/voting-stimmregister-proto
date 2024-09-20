@@ -1,4 +1,4 @@
-# ✨ Changelog (`v1.44.1`)
+# ✨ Changelog (`v2.0.3`)
 
 All notable changes to this project will be documented in this file.
 
@@ -8,11 +8,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Version Info
 
 ```text
-This version -------- v1.44.1
-Previous version ---- v1.44.0
+This version -------- v2.0.3
+Previous version ---- v1.44.1
 Initial version ----- v1.42.3
-Total commits ------- 1
+Total commits ------- 4
 ```
+
+## [v2.0.3] - 2024-08-27
+
+### 🔄 Changed
+
+- patch ci-cd job definition to resolve failing artifact upload.
+
+## [v2.0.2] - 2024-08-27
+
+### 🔄 Changed
+
+- update bug bounty template reference
+- patch ci-cd template version, align with new defaults
+
+## [v2.0.1] - 2024-07-11
+
+### 🆕 Added
+
+- add filter actuality metadata in filter metadata response.
+
+## [v2.0.0] - 2024-06-06
+
+BREAKING CHANGE: angular 17 Update
+
+### 🔄 Changed
+
+- angular 17 Update
 
 ## [v1.44.1] - 2024-06-03
 
