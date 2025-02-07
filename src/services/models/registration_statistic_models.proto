@@ -9,14 +9,10 @@ option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Models";
 
 // The registration statistic model.
 message RegistrationStatisticModel {
-  // The amount of e-voter registrations.
-  int32 evoter_registration_count = 1;
-  // The amount of e-voter deregistrations.
-  int32 evoter_deregistration_count = 2;
   // The total amount of e-voters.
-  int32 evoter_total_count = 3;
+  int32 evoter_total_count = 1;
   // The total amount of voters.
-  int32 voter_total_count = 4;
+  int32 voter_total_count = 2;
   // The audit info of this entity.
-  float evoter_share = 5;
+  float evoter_share = 3;
 }

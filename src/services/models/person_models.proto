@@ -223,6 +223,15 @@ message PersonModel {
 
   // The post office box number of contact address.
   google.protobuf.Int32Value contact_address_post_office_box_number = 87;
+
+  // whether the person is a householder
+  bool is_householder = 88;
+
+  // The residence building id (EGID)
+  int32 residence_building_id = 89;
+
+  // The residence apartment id (EWID)
+  int32 residence_apartment_id = 90;
 }
 
 // Person search type.

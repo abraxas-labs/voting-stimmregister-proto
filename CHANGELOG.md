@@ -1,4 +1,4 @@
-# ✨ Changelog (`v2.0.3`)
+# ✨ Changelog (`v3.1.0`)
 
 All notable changes to this project will be documented in this file.
 
@@ -8,11 +8,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Version Info
 
 ```text
-This version -------- v2.0.3
-Previous version ---- v1.44.1
+This version -------- v3.1.0
+Previous version ---- v2.0.3
 Initial version ----- v1.42.3
 Total commits ------- 4
 ```
+
+## [v3.1.0] - 2025-01-28
+
+### 🆕 Added
+
+- add householder fields
+
+## [v3.0.0] - 2024-11-15
+
+BREAKING CHANGE: update Angular to version 18
+
+### 🔄 Changed
+
+- update Angular to version 18
+
+## [v2.0.4] - 2024-09-22
+
+### ❌ Removed
+
+- remove e-voter registration counts
 
 ## [v2.0.3] - 2024-08-27
 
