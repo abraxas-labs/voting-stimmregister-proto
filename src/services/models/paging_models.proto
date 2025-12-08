@@ -23,3 +23,9 @@ message PagingModel {
   */
   int32 page_size = 2 [(validation.v1.rules).integer = { min_value: 1, max_value: 100}];
 }
+
+message PageInfo {
+  int32 page_index = 1;
+  int32 page_size = 2;
+  int32 total_count = 3;
+}

@@ -1,0 +1,26 @@
+// (c) Copyright 2022 by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services;
+
+import "services/requests/ecollecting_requests.proto";
+import "services/responses/ecollecting_responses.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services";
+
+// Service for ecollecting data.
+service EcollectingService {
+  // Gets a person by its ahv13 number.
+  rpc EcollectingServiceGetPersonIdByAhvn13(services.requests.EcollectingServiceGetPersonIdByAhvn13Request)
+    returns (services.responses.EcollectingServiceGetPersonIdByAhvn13Response);
+
+  // Gets people by ids.
+  rpc EcollectingServiceGetPeopleByIds(services.requests.EcollectingServiceGetPeopleByIdsRequest)
+    returns (services.responses.EcollectingServiceGetPeopleResponse);
+
+  // Gets people by name and address.
+  rpc EcollectingServiceGetPeopleByName(services.requests.EcollectingServiceGetPeopleByNameRequest)
+    returns (services.responses.EcollectingServiceGetPeopleResponse);
+}

@@ -6,7 +6,7 @@ set -Eeuo pipefail
 # but there is no such infrastructure @ abraxas yet...
 
 PROTOC_VERSION=21.2
-PROTOC_GRPC_WEB_VERSION=1.3.1
+PROTOC_GRPC_WEB_VERSION=1.5.0
 PROTOC_GEN_DOC_VERSION=1.5.1
 
 PROTOC_DOWNLOAD_URL="https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-x86_64.zip"

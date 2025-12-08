@@ -5,6 +5,7 @@ syntax = "proto3";
 
 package abraxas.voting.stimmregister.v1.services;
 
+import "google/protobuf/empty.proto";
 import "services/requests/import_statistic_requests.proto";
 import "services/responses/import_statistic_responses.proto";
 
@@ -15,7 +16,12 @@ service ImportStatisticService {
   // Lists the import statistics.
   rpc List(services.requests.ListImportStatisticsRequest)
     returns (services.responses.ListImportStatisticsResponse);
+
   // Gets the import statistics history.
   rpc GetHistory(services.requests.GetImportStatisticHistoryRequest)
     returns (services.responses.GetImportStatisticHistoryResponse);
+
+  // Get supported source systems.
+  rpc GetSupportedSourceSystems(google.protobuf.Empty)
+    returns (services.responses.GetSupportedSourceSystemsResponse);
 }

@@ -5,6 +5,7 @@ syntax = "proto3";
 
 package abraxas.voting.stimmregister.v1.services.responses;
 
+import "services/models/import_source_system_models.proto";
 import "services/models/import_statistic_models.proto";
 
 option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Responses";
@@ -25,4 +26,10 @@ message GetImportStatisticHistoryResponse {
 
   // The total search hits count.
   int32 total_count = 2;
+}
+
+// Get a list of supported source systems for the current user context.
+message GetSupportedSourceSystemsResponse {
+  // The list of source system types.
+  repeated services.models.ImportSourceSystem source_systems = 1;
 }

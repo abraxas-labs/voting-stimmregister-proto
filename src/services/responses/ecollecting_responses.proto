@@ -1,0 +1,86 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.responses;
+
+import "google/protobuf/timestamp.proto";
+import "services/models/paging_models.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Responses";
+
+// Get last used parameters response
+message EcollectingServiceGetPersonIdByAhvn13Response {
+  // The id.
+  string register_id = 1;
+
+  // The sex.
+  int32 sex = 2;
+
+  // The age.
+  int32 age = 3;
+
+  // The muncipality name.
+  string municipality_name = 4;
+
+  // The municipality id.
+  int32 municipality_id = 5;
+}
+
+// Get last used parameters response
+message EcollectingServiceGetPeopleResponse {
+  // the search type
+  repeated EcollectingServicePersonModel people = 1;
+
+  // The paging information
+  services.models.PageInfo page_info = 2;
+}
+
+// The person model for physical signature and its control.
+message EcollectingServicePersonModel {
+  // Whether person is allowed to vote
+  bool is_voting_allowed = 1;
+
+  // Whether the date of birth is valid for voting rights (the age of the person is old enough to vote, e.g. 18 years)
+  bool is_birth_date_valid_for_voting_rights = 2;
+
+  // Whether the nationality is valid for voting rights (e.g. swiss citizenship)
+  bool is_nationality_valid_for_voting_rights = 3;
+
+  // The id.
+  string register_id = 4;
+
+  // The official name.
+  string official_name = 5;
+
+  // The first name.
+  string first_name = 6;
+
+  // The sex.
+  int32 sex = 7;
+
+  // The date of birth.
+  google.protobuf.Timestamp date_of_birth = 8;
+
+  // The age.
+  int32 age = 9;
+
+  // The muncipality name.
+  string municipality_name = 10;
+
+  // The municipality id.
+  int32 municipality_id = 11;
+
+  // The street of residence address.
+  string residence_address_street = 12;
+
+  // The hous number of residence address.
+  string residence_address_house_number = 13;
+
+  // The town of residence address.
+  string residence_address_town = 14;
+
+  // The zip code of residence address.
+  string residence_address_zip_code = 15;
+}

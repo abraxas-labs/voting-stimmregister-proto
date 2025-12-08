@@ -232,6 +232,9 @@ message PersonModel {
 
   // The residence apartment id (EWID)
   int32 residence_apartment_id = 90;
+
+  // The email used for e-voting purposes.
+  string e_voting_email = 91;
 }
 
 // Person search type.

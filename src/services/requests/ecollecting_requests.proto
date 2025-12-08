@@ -1,0 +1,64 @@
+// (c) Copyright 2022 by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.requests;
+
+import "google/protobuf/timestamp.proto";
+import "rules/rules.proto";
+import "services/models/paging_models.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Requests";
+
+// Get all filter request
+message EcollectingServiceGetPersonIdByAhvn13Request {
+  // The AHVN13 number of the person.
+  int64 vn = 1 [(validation.v1.rules).integer64 = { min_value: 7560000000001, max_value: 7569999999999 }];
+
+  oneof canton_or_municipality {
+    // The BFS of the canton.
+    int32 canton_bfs = 2 [(validation.v1.rules).integer = { min_value: 1, max_value: 9999 }];
+
+    // The ID of the municipality.
+    int32 municipality_id = 3 [(validation.v1.rules).integer = { min_value: 1, max_value: 9999 }];
+  }
+}
+
+// Get people by ids request
+message EcollectingServiceGetPeopleByIdsRequest {
+  // The ID of the municipality.
+  int32 municipality_id = 1 [(validation.v1.rules).integer = { min_value: 1, max_value: 9999 }];
+
+  // The register ids of the people to get.
+  repeated string register_ids = 2 [(validation.v1.rules).string.allow_empty = false];
+
+  // The date to check the actuality of the data.
+  google.protobuf.Timestamp actuality_date = 3 [(validation.v1.rules).object.required = true];
+}
+
+// Get people by name request
+message EcollectingServiceGetPeopleByNameRequest {
+  // The ID of the municipality.
+  int32 municipality_id = 1 [(validation.v1.rules).integer = { min_value: 1, max_value: 9999 }];
+
+  // The official name of the person.
+  string official_name = 2;
+
+  // The first name of the person.
+  string first_name = 3;
+
+  // The date of birth of the person.
+  google.protobuf.Timestamp date_of_birth = 4;
+
+  // The street of address.
+  string address_street = 5;
+
+  // The hous number of address.
+  string address_house_number = 6;
+
+  // The date to check the actuality of the data.
+  google.protobuf.Timestamp actuality_date = 7 [(validation.v1.rules).object.required = true];
+
+  services.models.PagingModel paging = 8;
+}

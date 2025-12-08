@@ -1,4 +1,4 @@
-# ✨ Changelog (`v3.1.0`)
+# ✨ Changelog (`v3.6.1`)
 
 All notable changes to this project will be documented in this file.
 
@@ -8,11 +8,58 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Version Info
 
 ```text
-This version -------- v3.1.0
-Previous version ---- v2.0.3
+This version -------- v3.6.1
+Previous version ---- v3.1.0
 Initial version ----- v1.42.3
-Total commits ------- 4
+Total commits ------- 7
 ```
+
+## [v3.6.1] - 2025-10-22
+
+### 🔄 Changed
+
+- angular and base components update
+
+## [v3.6.0] - 2025-10-21
+
+### 🆕 Added
+
+- add new import source system for cobra.
+- add new service to evaluate supported source systems for optimized UI/UX capability.
+
+### ❌ Removed
+
+- remove unused data service.
+
+## [v3.5.0] - 2025-10-14
+
+### 🆕 Added
+
+- add e-voting email
+
+## [v3.4.0] - 2025-09-08
+
+### 🆕 Added
+
+- feat(VOTING-6287): add paging and detailed person info to the ecollecting endpoint
+
+## [v3.3.1] - 2025-05-27
+
+### 🔄 Changed
+
+- fix(VOTING-5688): e-collecting by ahvn13 only require either canton bfs or municipality id
+
+## [v3.3.0] - 2025-05-22
+
+### 🆕 Added
+
+- E-Collecting service
+
+## [v3.2.0] - 2025-03-04
+
+### 🔄 Changed
+
+- angular 19 update
 
 ## [v3.1.0] - 2025-01-28
 
@@ -87,10 +134,84 @@ BREAKING CHANGE: angular 17 Update
 
 ## [v1.43.0] - 2024-02-06
 
+### 🔄 Changed
+
+- angular and base components update
+
 ### 🆕 Added
 
-- add filter tenant name
+- add new import source system for cobra.
+- add new service to evaluate supported source systems for optimized UI/UX capability.
 
-## [v1.42.3] - 2024-01-31
+### ❌ Removed
 
-### 🎉 Initial release for Bug Bounty
+- remove unused data service.
+
+### 🆕 Added
+
+- add e-voting email
+
+### 🆕 Added
+
+- feat(VOTING-6287): add paging and detailed person info to the ecollecting endpoint
+
+### 🔄 Changed
+
+- fix(VOTING-5688): e-collecting by ahvn13 only require either canton bfs or municipality id
+
+### 🆕 Added
+
+- E-Collecting service
+
+### 🔄 Changed
+
+- angular 19 update
+
+### 🆕 Added
+
+- add householder fields
+
+BREAKING CHANGE: update Angular to version 18
+
+### 🔄 Changed
+
+- update Angular to version 18
+
+### ❌ Removed
+
+- remove e-voter registration counts
+
+### 🔄 Changed
+
+- patch ci-cd job definition to resolve failing artifact upload.
+
+### 🔄 Changed
+
+- update bug bounty template reference
+- patch ci-cd template version, align with new defaults
+
+### 🆕 Added
+
+- add filter actuality metadata in filter metadata response.
+
+BREAKING CHANGE: angular 17 Update
+
+### 🔄 Changed
+
+- angular 17 Update
+
+### 🔄 Changed
+
+- update link to code of conduct
+
+### 🆕 Added
+
+- registration statistic service
+
+### 🔄 Changed
+
+- extend input validation for 'name' attribute of filter and version
+
+### :arrows_counterclockwise: Changed
+
+- remove unused doi type 'Ki'
