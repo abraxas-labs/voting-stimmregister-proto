@@ -34,10 +34,10 @@ message FilterCriteriaModel {
   FilterOperator filter_operator = 4 [(validation.v1.rules).enum.exact_enum = true];
 
   /*
-    validations: max-length(100), standard-singleline-text,allow-undefined
+    validations: max-length(500), standard-singleline-text,allow-undefined
     description: The filter value
   */
-  string filter_value = 5 [(validation.v1.rules).string = { max_length: 100 }];
+  string filter_value = 5 [(validation.v1.rules).string = { max_length: 500 }];
 }
 
 // The filter data type options.

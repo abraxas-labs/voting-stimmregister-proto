@@ -1,4 +1,4 @@
-# ✨ Changelog (`v3.6.1`)
+# ✨ Changelog (`v3.6.3`)
 
 All notable changes to this project will be documented in this file.
 
@@ -8,11 +8,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Version Info
 
 ```text
-This version -------- v3.6.1
+This version -------- v3.6.3
 Previous version ---- v3.1.0
 Initial version ----- v1.42.3
-Total commits ------- 7
+Total commits ------- 9
 ```
+
+## [v3.6.3] - 2026-02-06
+
+### 🔄 Changed
+
+- extend CD pipeline with enhanced bug bounty publication workflow
+
+## [v3.6.2] - 2026-02-03
+
+### 🔄 Changed
+
+- update input validation length from `100` to `500` characters for official name filter value.
 
 ## [v3.6.1] - 2025-10-22
 
@@ -134,84 +146,10 @@ BREAKING CHANGE: angular 17 Update
 
 ## [v1.43.0] - 2024-02-06
 
-### 🔄 Changed
-
-- angular and base components update
-
 ### 🆕 Added
 
-- add new import source system for cobra.
-- add new service to evaluate supported source systems for optimized UI/UX capability.
+- add filter tenant name
 
-### ❌ Removed
+## [v1.42.3] - 2024-01-31
 
-- remove unused data service.
-
-### 🆕 Added
-
-- add e-voting email
-
-### 🆕 Added
-
-- feat(VOTING-6287): add paging and detailed person info to the ecollecting endpoint
-
-### 🔄 Changed
-
-- fix(VOTING-5688): e-collecting by ahvn13 only require either canton bfs or municipality id
-
-### 🆕 Added
-
-- E-Collecting service
-
-### 🔄 Changed
-
-- angular 19 update
-
-### 🆕 Added
-
-- add householder fields
-
-BREAKING CHANGE: update Angular to version 18
-
-### 🔄 Changed
-
-- update Angular to version 18
-
-### ❌ Removed
-
-- remove e-voter registration counts
-
-### 🔄 Changed
-
-- patch ci-cd job definition to resolve failing artifact upload.
-
-### 🔄 Changed
-
-- update bug bounty template reference
-- patch ci-cd template version, align with new defaults
-
-### 🆕 Added
-
-- add filter actuality metadata in filter metadata response.
-
-BREAKING CHANGE: angular 17 Update
-
-### 🔄 Changed
-
-- angular 17 Update
-
-### 🔄 Changed
-
-- update link to code of conduct
-
-### 🆕 Added
-
-- registration statistic service
-
-### 🔄 Changed
-
-- extend input validation for 'name' attribute of filter and version
-
-### :arrows_counterclockwise: Changed
-
-- remove unused doi type 'Ki'
+### 🎉 Initial release for Bug Bounty
