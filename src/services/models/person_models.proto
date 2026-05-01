@@ -235,6 +235,10 @@ message PersonModel {
 
   // The email used for e-voting purposes.
   string e_voting_email = 91;
+
+  // The origins (all domain of influences with type OG)
+  // Format: '{name} ({canton})'
+  repeated string origins = 92;
 }
 
 // Person search type.

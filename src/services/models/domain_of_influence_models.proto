@@ -40,6 +40,10 @@ enum DomainOfInfluenceType {
   DOMAIN_OF_INFLUENCE_TYPE_AN_WOK = 14;
   // Volkskreis
   DOMAIN_OF_INFLUENCE_TYPE_AN_VOK = 15;
+  // Elementary school circle (Primarschulkreis)
+  DOMAIN_OF_INFLUENCE_TYPE_SC_PS = 16;
+  // Upper school circle (Oberstufenschulkreis)
+  DOMAIN_OF_INFLUENCE_TYPE_SC_OS = 17;
 }
 
 // The domain of influence model.

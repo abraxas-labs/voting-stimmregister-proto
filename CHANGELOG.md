@@ -1,4 +1,4 @@
-# ✨ Changelog (`v3.6.3`)
+# ✨ Changelog (`v3.9.0`)
 
 All notable changes to this project will be documented in this file.
 
@@ -8,11 +8,41 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Version Info
 
 ```text
-This version -------- v3.6.3
-Previous version ---- v3.1.0
+This version -------- v3.9.0
+Previous version ---- v3.6.3
 Initial version ----- v1.42.3
-Total commits ------- 9
+Total commits ------- 5
 ```
+
+## [v3.9.0] - 2026-04-28
+
+### 🆕 Added
+
+- add elementary and upper school circles
+
+## [v3.8.2] - 2026-04-28
+
+### 🆕 Added
+
+- add origins to person
+
+## [v3.8.1] - 2026-04-27
+
+### 🆕 Added
+
+- add node and dotnet image tags for ci-pipeline
+
+## [v3.8.0] - 2026-03-27
+
+### 🔄 Changed
+
+- update angular 21
+
+## [v3.7.0] - 2026-03-04
+
+### 🔄 Changed
+
+- feat(VOTING-6729): use latest proto validation
 
 ## [v3.6.3] - 2026-02-06
 
