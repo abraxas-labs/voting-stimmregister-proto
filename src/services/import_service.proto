@@ -1,0 +1,23 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services;
+
+import "google/protobuf/empty.proto";
+import "services/requests/import_requests.proto";
+import "services/responses/import_responses.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services";
+
+// Operations supporting manual file imports performed via the web UI.
+service ImportService {
+  // Prepares a second factor transaction for a manual file import.
+  rpc PrepareManualImport(google.protobuf.Empty)
+    returns (services.responses.PrepareManualImportResponse);
+
+  // Polls the second factor provider until the user confirms the manual import transaction.
+  rpc VerifyManualImport(services.requests.VerifyManualImportRequest)
+    returns (google.protobuf.Empty);
+}

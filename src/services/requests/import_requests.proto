@@ -1,0 +1,24 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.requests;
+
+import "rules/rules.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Requests";
+
+message VerifyManualImportRequest {
+  /*
+    validations: is-guid
+    description: The id of the second factor transaction to verify.
+  */
+  string second_factor_transaction_id = 1 [(validation.v1.rules).string.guid = true];
+
+  /*
+    validations: length(6),allow-undefined
+    description: Six digit OTP code, only required when verifying via the OTP provider.
+  */
+  string otp_code = 2 [(validation.v1.rules).string = { min_length: 6, max_length: 6, allow_empty: true }];
+}

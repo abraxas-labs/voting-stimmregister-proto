@@ -45,8 +45,8 @@ message EcollectingServiceGetPeopleByNameRequest {
   // The official name of the person.
   string official_name = 2;
 
-  // The first name of the person.
-  string first_name = 3;
+  // The first name or call name of the person.
+  string first_name_or_call_name = 3;
 
   // The date of birth of the person.
   google.protobuf.Timestamp date_of_birth = 4;

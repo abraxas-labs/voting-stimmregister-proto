@@ -1,0 +1,14 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.responses;
+
+import "services/models/second_factor_transaction_models.proto";
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Responses";
+
+message PrepareManualImportResponse {
+  services.models.SecondFactorTransactionModel second_factor_transaction = 1;
+}

@@ -1,0 +1,25 @@
+// (c) Copyright by Abraxas Informatik AG
+// For license information see LICENSE file
+
+syntax = "proto3";
+
+package abraxas.voting.stimmregister.v1.services.models;
+
+option csharp_namespace = "Voting.Stimmregister.Proto.V1.Services.Models";
+
+enum SecondFactorTransactionProvider {
+  SECOND_FACTOR_TRANSACTION_PROVIDER_UNSPECIFIED = 0;
+  SECOND_FACTOR_TRANSACTION_PROVIDER_NEVIS = 1;
+  SECOND_FACTOR_TRANSACTION_PROVIDER_OTP = 2;
+}
+
+message SecondFactorTransactionModel {
+  string id = 1;
+  repeated SecondFactorTransactionProvider available_providers = 2;
+  SecondFactorTransactionNevisInfo nevis = 3;
+}
+
+message SecondFactorTransactionNevisInfo {
+  string correlation_code = 1;
+  string qr_code = 2;
+}
